@@ -45,7 +45,7 @@ const app = http.createServer(async (req, res) => {
 
       res.end(`This is the list of our students\n${studentsInfo}`);
     } catch (error) {
-      res.end(`Error: ${error.message}`);
+      res.end(error.message);
     }
   } else {
     res.end('Not Found');
