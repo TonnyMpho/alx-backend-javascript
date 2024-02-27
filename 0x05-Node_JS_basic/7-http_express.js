@@ -38,14 +38,14 @@ async function countStudents(path) {
       }
     }
 
-    let result = `Number of students: ${totalStudents}\n`;
+    let result = `Number of students: ${totalStudents}`;
 
     for (const field of Object.keys(fieldCounts)) {
       const studentList = lines.slice(1)
         .filter((line) => line.split(',')[3] === field)
         .map((line) => line.split(',')[0])
         .join(', ');
-      result += `Number of students in ${field}: ${fieldCounts[field]}. List: ${studentList}\n`;
+      result += `\nNumber of students in ${field}: ${fieldCounts[field]}. List: ${studentList}`;
     }
 
     return result;
