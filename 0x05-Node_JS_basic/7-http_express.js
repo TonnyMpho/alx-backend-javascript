@@ -1,26 +1,5 @@
 const express = require('express');
 const fs = require('fs').promises;
-const path = require('path');
-
-const app = express();
-const PORT = 1245;
-
-app.get('/', (req, res) => {
-  res.send('Hello Holberton School!');
-});
-
-app.get('/students', async (req, res) => {
-  try {
-    const databasePath = process.argv[2];
-    const studentsInfo = await countStudents(databasePath);
-
-    res.send(`This is the list of our students:\n${studentsInfo}`);
-  } catch (error) {
-    res.status(500).send(`Error: ${error.message}`);
-  }
-});
-
-app.listen(PORT)
 
 async function countStudents(path) {
   try {
@@ -53,5 +32,25 @@ async function countStudents(path) {
     throw new Error('Cannot load the database');
   }
 }
+
+const app = express();
+const PORT = 1245;
+
+app.get('/', (req, res) => {
+  res.send('Hello Holberton School!');
+});
+
+app.get('/students', async (req, res) => {
+  try {
+    const databasePath = process.argv[2];
+    const studentsInfo = await countStudents(databasePath);
+
+    res.send(`This is the list of our students\n${studentsInfo}`);
+  } catch (error) {
+    res.status(500).send(`Error: ${error.message}`);
+  }
+});
+
+app.listen(PORT);
 
 module.exports = app;
