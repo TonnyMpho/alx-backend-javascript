@@ -45,7 +45,7 @@ const app = http.createServer(async (req, res) => {
 
       res.end(`This is the list of our students\n${studentsInfo}`);
     } catch (error) {
-      res.end(error.message);
+      res.end('Cannot load the database');
     }
   } else {
     res.end('Not Found');
