@@ -43,7 +43,7 @@ const app = http.createServer(async (req, res) => {
       const databasePath = process.argv[2];
       const studentsInfo = await countStudents(databasePath);
 
-      res.end(`This is the list of our students:\n${studentsInfo}`);
+      res.end(`This is the list of our students\n${studentsInfo}`);
     } catch (error) {
       res.end(`Error: ${error.message}`);
     }
@@ -53,6 +53,6 @@ const app = http.createServer(async (req, res) => {
 });
 
 const PORT = 1245;
-app.listen(PORT)
+app.listen(PORT);
 
 module.exports = app;
