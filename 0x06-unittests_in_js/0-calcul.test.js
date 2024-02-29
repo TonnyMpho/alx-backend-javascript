@@ -19,6 +19,6 @@ describe('calculateNumber', () => {
   });
 
   it('return the sum of rounded two negative numbers', () => {
-    assert.equal(calculateNumber(-1.5, -3.7), -6);
+    assert.strictEqual(calculateNumber(-1.5, -3.7), -5);
   });
 });
