@@ -4,7 +4,7 @@ const expect = chai.expect;
 const calculateNumber = require('./1-calcul.js');
 
 describe('calculateNumber', function () {
-  describe('type is SUM', () => {
+  describe('type is SUM', function () {
     it('should round the numbers and return the sum', function () {
       expect(calculateNumber('SUM', 1, 3)).to.equal(4);
       expect(calculateNumber('SUM', 1, 3.7)).to.equal(5);
