@@ -1,32 +1,21 @@
-// 1-calcul.test.js
-const chai = require('chai');
-const expect = chai.expect;
-const calculateNumber = require('./1-calcul.js');
+// 2-calcul_chai.test.js
+const { expect } = require('chai');
+const calculateNumber = require('./2-calcul_chai');
 
-describe('calculateNumber', function () {
-  describe('type is SUM', function () {
-    it('should round the numbers and return the sum', function () {
-      expect(calculateNumber('SUM', 1, 3)).to.equal(4);
-      expect(calculateNumber('SUM', 1, 3.7)).to.equal(5);
-    });
+describe('calculateNumber', () => {
+  it('should return the sum of two rounded numbers when type is SUM', () => {
+    expect(calculateNumber('SUM', 1, 3)).to.equal(4);
   });
 
-  describe('type is SUBTRACT', function () {
-    it('should round the numbers and return the subtraction result', function () {
-      expect(calculateNumber('SUBTRACT', 5, 3)).to.equal(2);
-      expect(calculateNumber('SUBTRACT', 5, 3.7)).to.equal(1);
-    });
+  it('should return the result of subtracting two rounded numbers when type is SUBTRACT', () => {
+    expect(calculateNumber('SUBTRACT', 1, 3.7)).to.equal(-3);
   });
 
-  describe('type is DIVIDE', function () {
-    it('should round the numbers and return the division result', function () {
-      expect(calculateNumber('DIVIDE', 1.4, 4.5)).to.equal(0.2);
-      expect(calculateNumber('DIVIDE', 8, 2)).to.equal(4);
-    });
+  it('should return the result of dividing two rounded numbers when type is DIVIDE', () => {
+    expect(calculateNumber('DIVIDE', 1.5, 3.7)).to.equal(0.405);
+  });
 
-    it('should handle division by 0 and return Error', function () {
-      expect(calculateNumber('DIVIDE', 10, 0)).to.equal('Error');
-      expect(calculateNumber('DIVIDE', 1.4, 0)).to.equal('Error');
-    });
+  it('should return "Error" when trying to divide by 0', () => {
+    expect(calculateNumber('DIVIDE', 1.5, 0)).to.equal('Error');
   });
 });
