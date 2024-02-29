@@ -11,10 +11,10 @@ describe('calculateNumber', () => {
   });
 
   it('return the rounded sum of two floats', () => {
-    assert.equal(calculateNumber(1.2, 3.7), 5);
+    assert.strictEqual(calculateNumber(1.2, 3.7), 5);
   });
 
   it('return the rounded sum of two floats', () => {
-    assert.equal(calculateNumber(1.5, 3.7), 6);
+    assert.strictEqual(calculateNumber(1.5, 3.7), 6);
   });
 });

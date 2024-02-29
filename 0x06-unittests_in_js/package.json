@@ -1,5 +1,13 @@
 {
+  "name": "Unittests_in_JS",
+  "version": "1.0.0",
+  "description": "Unnit testing",
+  "main": "index.js",
   "scripts": {
     "test": "mocha"
+  },
+  "devDependencies": {
+    "mocha": "^10.3.0"
   }
 }
+
